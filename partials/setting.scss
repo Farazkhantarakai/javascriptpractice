@@ -1,0 +1,16 @@
+@mixin para {
+  font-size: small;
+  font-weight: 700;
+  color: green;
+  
+}
+
+
+@mixin button(){
+    background-color: chartreuse;
+    color: white;
+    padding: 200;
+    border-radius: 20px;
+    border: none;
+    text-align: center;
+}

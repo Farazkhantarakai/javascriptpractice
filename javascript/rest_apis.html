@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<!-- ' -->
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+	<script type="text/javascript">
+
+		async function getUsers(){
+			let html=`
+			<table border=1>
+			<tr>
+			<th> id </th>
+			<th> login </th>
+			<th> avatar_url </th>
+			<th> node_id</th>
+			<tr>
+			`
+			let data = await fetch('https://api.github.com/users')
+			 data=await data.json()
+			 //console.log(data)
+			 data.forEach(user=>{
+			 	//console.log(user)
+
+			 	html+=`
+				<tr>
+				<td> ${user.id} </td>
+				<td> ${user.login} </td>
+				<td> ${user.node_id} </td>
+				<td><img src='${user.avatar_url}' height=50 width=100/> </td>
+				</tr>
+
+				`
+
+			 })
+			 html+='</table>'
+			 // let div=document.createElement('div')
+			 // div.innerHTML=html
+			 // console.log(div.textContent)
+			 document.getElementById('anon').innerHTML=html
+
+
+
+		}
+
+
+		function getData(){
+			let html=`
+			<table border=1>
+			<tr>
+			<th> id </th>
+			<th> login </th>
+			<th> avatar_url </th>
+			<th> node_id</th>
+			<tr>
+			`
+			fetch('https://api.github.com/users')
+			.then((response)=>response.json())
+			.then(users=>users.forEach(user=>{
+				//console.log(user.id)
+				html+=`
+				<tr>
+				<td> ${user.id} </td>
+				<td> ${user.login} </td>
+				<td> ${user.node_id} </td>
+				<td><img src='${user.avatar_url}' height=50 width=100/> </td>
+				</tr>
+
+				`
+				//console.log(html)
+			}))
+			.then(()=>document.getElementById('users').innerHTML=html)
+			 
+			}
+
+
+	
+
+	</script>
+</head>
+<body>
+	<div id='users'></div>
+	<div id='anon'></div>
+
+
+	<button onclick="getData()"> load data</button>
+	<button onclick="getUsers()">Using Async </button>
+
+</body>
+</html>

@@ -1,0 +1,46 @@
+p {
+  font-size: small;
+  font-weight: 700;
+  color: green;
+}
+
+h1 {
+  color: rgb(19, 19, 19);
+  background-color: rgb(255, 0, 0);
+}
+
+#b, #b2 {
+  background-color: chartreuse;
+  color: white;
+  padding: 200;
+  border-radius: 20px;
+  border: none;
+  text-align: center;
+}
+#b:hover, #b2:hover {
+  background-color: grey;
+  color: white;
+  width: 100px;
+  height: 100px;
+}
+
+#b2 {
+  margin-left: 50px;
+}
+
+nav ul {
+  list-style: none;
+}
+nav ul li {
+  display: inline-block;
+  margin: 20px;
+  background-color: black;
+  padding: 20px;
+}
+nav ul li a {
+  text-decoration: none;
+  color: goldenrod;
+}
+nav ul li a:hover {
+  color: white;
+}/*# sourceMappingURL=style.css.map */

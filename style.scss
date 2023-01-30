@@ -1,0 +1,49 @@
+@import './partials/variables';
+@import './partials/setting';
+
+p{
+    @include para; //this will include the setting file here 
+}
+
+h1{
+    color: $text_color;
+    background-color: $backGround_color;
+}
+
+#b{
+@include button;
+&:hover{
+    background-color:grey;
+    color: white;
+    width: 100px;
+    height: 100px;
+}
+}
+
+#b2{
+    @extend #b;
+    margin-left: 50px;
+}
+
+nav{
+    
+    ul{
+        list-style: none;
+       
+        li{
+            display: inline-block;
+            margin: 20px;
+            background-color: black;
+            padding: 20px;
+            a{
+                text-decoration: none;
+                color: goldenrod;
+            }
+            a:hover{
+              
+                color: white
+               
+            }
+        }
+    }
+}
